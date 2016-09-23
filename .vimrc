@@ -18,6 +18,19 @@ set smartindent
 " show current position
 set ruler
 
+set statusline=
+set statusline+=%1*\[%n]                                    " buffer number
+set statusline+=%2*\ %<%F\                                  " file path
+set statusline+=%3*\ %=\ %{''.(&fenc!=''?&fenc:&enc).''}\   " text encoding
+set statusline+=%4*\ %{(&bomb?\",BOM\":\"\")}\              " text encoding 2
+set statusline+=%5*\ %{&ff}\                                " file format (dos/unix..)
+set statusline+=%6*\ row:%l/%L\ col:%03c\ (%03p%%)\         " row number/total (%)
+set statusline+=%0*\ \ %m%r%w\ %P\ \                        " modified? readonly? Top/bot.
+hi User2 ctermfg=3 ctermbg=0
+hi User6 ctermfg=3 ctermbg=4
+set laststatus=2
+
+
 " highlight all search pattern
 set hlsearch
 
